@@ -1,25 +1,39 @@
 package com.glc;
-
 import java.util.ArrayList;
+import java.util.List;
 
 public class ReadingList {
-    private Book book;
-    private String dateread;
-    private int rating;
-    public ReadingList(Book book, String dateread, int rating){
-        this.book = book;
-        this.dateread = dateread;
-        this.rating = rating;
-    }
+        private int rating;
+        private String dateread;
+        private Book book;
 
-    public int numbersread(){
-        return books.size();
-    }
+        public ReadingList(Book book, String dateread, int rating){
+            this.rating = rating;
+            this.dateread = dateread;
+            this.book = book;
+        }
 
-    public ArrayList<ReadingList> books  = new ArrayList<>();
-    public void addBook(Book book, String dateRead, int rating) {
-        String bookdet = book.toString() + ", read on " + dateread + "," + "*".repeat(rating);
-    }
+        public ReadingList(){
+
+        }
+
+        List <ReadingList> buks = new ArrayList<>();
+
+        public void addBook(Book book, String dateread, int rating){
+            ReadingList r = new ReadingList(book, dateread, rating);
+            buks.add(r);
+        }
+         public int Readbook(){
+            return buks.size();
+         }
+
+         public List<ReadingList> getbook(){
+            return buks;
+         }
+        public void deleteBook(String title){
+            buks.remove(book);
+     }
+
 
 }
 
